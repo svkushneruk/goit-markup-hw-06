@@ -649,22 +649,27 @@ a {
   opacity: 0;
 }
 
-.modal-wrapper {
-  position: relativel;
-}
-
 .modal-close-btn {
   position: absolute;
   right: 8px;
   top: 8px;
-
-  display: block;
   width: 30px;
   height: 30px;
+  display: block;
   border-radius: 50%;
   background-color: transparent;
-  background-image: url(../images/close-btn.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
   border: 1px solid var(--close-btn-border-color);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: fill 250ms var(--time-function);
+}
+
+.modal-close-btn:hover .modal-icon {
+  fill: var(--accent-color);
 }
