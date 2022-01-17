@@ -29,6 +29,7 @@
   --backdrop-color: rgba(0, 0, 0, 0.2);
   --close-btn-border-color: rgba(0, 0, 0, 0.1);
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --modal-input-border-color: rgba(33, 33, 33, 0.2);
 }
 
 html {
@@ -625,6 +626,7 @@ a {
   position: absolute;
   width: 528px;
   height: 581px;
+  padding: 40px;
 
   top: 50%;
   left: 50%;
@@ -672,4 +674,69 @@ a {
 
 .modal-close-btn:hover .modal-icon {
   fill: var(--accent-color);
+}
+
+.modal-title {
+  margin-bottom: 30px;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--main-title-color);
+}
+
+.modal-form-field {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.modal-form-field:not(:last-child) {
+  margin-top: 28px;
+}
+
+.modal-form-field.modal-form-field-area {
+  margin-top: 20px;
+}
+
+.modal-form-input {
+  padding: 11px 12px;
+  padding-left: 42px;
+  width: 100%;
+
+  border: 1px solid var(--modal-input-border-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.modal-form-input-area {
+  padding: 12px 16px;
+  min-height: 120px;
+  resize: none;
+}
+
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translatey(-50%);
+}
+
+.modal-form-label {
+  position: absolute;
+  top: -22px;
+  left: 0;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.modal-form .modal-form-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
