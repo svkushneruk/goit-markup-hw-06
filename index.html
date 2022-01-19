@@ -408,6 +408,21 @@
             </li>
           </ul>
         </div>
+
+        <div class="mailing">
+          <b class="mailing-title">Подпишитесь на рассылку</b>
+          <form action="#" class="mailing-form">
+            <div class="mailing-form-field">
+              <input type="text" name="email" class="mailing-input" placeholder="E-mail" />
+              <button type="submit" class="hero-btn mailing-form-btn">
+                <span class="mailing-form-btn-text">Подписаться</span>
+                <svg class="mailing-form-icon" width="24px" height="24px">
+                  <use href="./images/icons.svg#icon-telegram"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -460,22 +475,23 @@
             ></textarea>
           </div>
 
-          <div class="modal-form-agree">
+          <label class="modal-form-agree-label">
             <input
               type="checkbox"
               name="checkbox"
-              id="checkbox"
-              class="modal-form-input visually-hidden"
+              class="modal-form-input modal-form-check visually-hidden"
             />
-            <label for="checkbox" class="modal-form-label">
-              <p class="modal-form-agree-text">
-                Соглашаюсь с рассылкой и принимаю
-                <a href="#" class="modal-form-agree-link" target="_blank" rel="noreferrer noopener">
-                  Условия договора
-                </a>
-              </p>
-            </label>
-          </div>
+            <svg class="modal-form-agree-icon" width="16" height="15">
+              <use href="./images/icons.svg#icon-check"></use>
+            </svg>
+            <p class="modal-form-agree-text">
+              Соглашаюсь с рассылкой и принимаю
+              <a href="#" class="modal-form-agree-link" target="_blank" rel="noreferrer noopener">
+                Условия договора
+              </a>
+            </p>
+          </label>
+
           <button type="submit" class="hero-btn modal-form-btn">Отправить</button>
         </form>
       </div>
