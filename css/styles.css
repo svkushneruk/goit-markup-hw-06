@@ -78,7 +78,7 @@ a {
   color: inherit;
 }
 
-label, input {
+input[type='checkbox'] {
   cursor: pointer;
 }
 
@@ -456,8 +456,12 @@ label, input {
   align-items: baseline;
 }
 
-.footer-contacts {
+.footer-cont-item:not(:last-child) {
   margin-right: 70px;
+}
+
+.footer-cont-item:last-child {
+  margin-left: auto;
 }
 
 .footer .logo {
@@ -488,8 +492,7 @@ label, input {
   margin-right: 93px;
 }
 
-.invite-title,
-.mailing-title {
+.footer-title {
   display: block;
   margin-bottom: 20px;
   font-weight: 700;
@@ -514,21 +517,17 @@ label, input {
   background-color: var(--accent-color);
 }
 
-.mailing {
-  flex-grow: 1;
-}
-
 .mailing-form-field {
   display: flex;
 }
 .mailing-input {
-  flex-grow: 1;
   display: inline-block;
   padding: 15px 16px;
   margin-right: 12px;
   width: 358px;
+  outline: none;
 
-  background-color: var(--hero-bg-color);
+  background-color: transparent;
   border-radius: 4px;
   border: 1px solid var(--mailing-form-border-color);
   filter: drop-shadow(0px 4px 4px var(--btn-shadow));
@@ -669,7 +668,7 @@ label, input {
 .modal {
   position: absolute;
   width: 528px;
-  /* height: 581px; */
+  min-height: 581px;
   padding: 40px;
 
   top: 50%;
@@ -716,7 +715,8 @@ label, input {
   transition: fill 250ms var(--time-function);
 }
 
-.modal-close-btn:hover .modal-icon {
+.modal-close-btn:hover .modal-icon,
+.modal-close-btn:focus .modal-icon {
   fill: var(--accent-color);
 }
 
@@ -730,7 +730,12 @@ label, input {
   color: var(--main-title-color);
 }
 
-.modal-form-field:not(:last-child) {
+.modal-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-field:not(:first-child) {
   margin-top: 10px;
 }
 
@@ -738,6 +743,7 @@ label, input {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
+  margin-bottom: 4px;
 }
 
 .form-input-field {
@@ -779,18 +785,22 @@ label, input {
   transition: fill 250ms var(--time-function);
 }
 
-.modal-form-field:focus-within .modal-form-input {
+.modal-form-field:focus-within .modal-form-input,
+.modal-form-input:hover,
+.mailing-input:hover,
+.mailing-input:focus {
   border: 1px solid var(--accent-color);
 }
-.modal-form-field:focus-within .modal-form-icon {
+.modal-form-field:focus-within .modal-form-icon,
+.modal-form-input:hover + .modal-form-icon {
   fill: var(--accent-color);
 }
 
 .modal-form-agree-label {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding-left: 12px;
 
   cursor: pointer;
 }
@@ -799,8 +809,14 @@ label, input {
   border: 2px solid var(--main-title-color);
   border-radius: 2px;
   margin-right: 8px;
+  outline: none;
 
   transition: background 250ms var(--time-function), border 250ms var(--time-function);
+}
+
+.modal-form-check:focus + .modal-form-agree-icon,
+.modal-form-check:hover + .modal-form-agree-icon {
+  border: 2px solid var(--accent-color);
 }
 
 .modal-form-check:checked + .modal-form-agree-icon {
